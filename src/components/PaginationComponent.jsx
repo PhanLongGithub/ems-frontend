@@ -12,9 +12,9 @@ const PaginationComponent = (props) => {
       page = 1;
     }
     let pagenumber = 0;
-    for (let index = 0; index < props.totalNumberOfEmployee; index = index + 10) {
+    for (let index = 0; index < props.totalNumberOfEntity; index = index + 10) {
       pagenumber++;
-      listItems.push(<li className={`page-item ${page == pagenumber ? 'active':''}`} key={pagenumber}><a className="page-link" href={`/employees/${pagenumber}`} >{pagenumber}</a></li>);
+      listItems.push(<li className={`page-item ${page == pagenumber ? 'active':''}`} key={pagenumber}><a className="page-link" href={`${props.link}/${pagenumber}`} >{pagenumber}</a></li>);
     }
     return listItems;
   }

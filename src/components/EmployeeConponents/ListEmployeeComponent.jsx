@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './ListEmployeeComponent.css'
-import { deleteEmployee, getTotalNumberOfEmployee, listEmployees, listEmployeesWithPagination } from '../services/EmployeeService';
+import { deleteEmployee, getTotalNumberOfEmployee, listEmployees, listEmployeesWithPagination } from '../../services/EmployeeService';
 import { Button } from 'bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
-import PaginationComponent from './PaginationComponent';
+import PaginationComponent from '../PaginationComponent';
 
 const ListEmployeeComponent = () => {
     let [employees, setEmployees] = useState([]);
@@ -91,7 +91,7 @@ const ListEmployeeComponent = () => {
                     }
                 </tbody>
             </table>
-            <PaginationComponent totalNumberOfEmployee = {totalNumberOfEmployee}></PaginationComponent>
+            <PaginationComponent totalNumberOfEntity = {totalNumberOfEmployee} link = '/employees'></PaginationComponent>
         </div>
     )
 };
